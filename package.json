@@ -12,11 +12,12 @@
     "pg": "^7.4.3"
   },
   "engines": {
-    "node": "0.10.x"
+    "node": "8.11.x",
+    "npm" : "5.6.x"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/taltmann0818/nwhs-groupme-js"
   },
   "keywords": [
     "node",
