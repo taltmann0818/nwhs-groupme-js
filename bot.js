@@ -1,21 +1,21 @@
 // local variables
 var HTTPS = require('https');
-const { Client } = require('pg');
+// const { Client } = require('pg');
 
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
+// const client = new Client({
+//  connectionString: process.env.DATABASE_URL,
+//  ssl: true,
+// });
 
-client.connect();
+// client.connect();
 
-client.query('SELECT public,nwhs_groupme FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
+// client.query('SELECT public,nwhs_groupme FROM information_schema.tables;', (err, res) => {
+//  if (err) throw err;
+//  for (let row of res.rows) {
+//    console.log(JSON.stringify(row));
+//  }
+//  client.end();
+// });
 
 
 // global variables
