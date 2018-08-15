@@ -4,7 +4,7 @@ http        = require('http');
 director    = require('director');
 bot         = require('./bot.js');
 var express = require('express');
-var app     = express();
+var app   = express();
 
 
 router = new director.http.Router({
@@ -31,8 +31,7 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.write("bot.localREQ.toString()");
-  this.res.write("TEST");
+  this.res.write("This is the front-end webwage for the webserver that handles the bots and database.");
   this.res.end();
   
 }
@@ -45,7 +44,7 @@ const pool = new Pool({
 app.get('/db', async (req, res) => {
   try {
     const client = await pool.connect()
-    const result = await client.query('SELECT * FROM nwhs-groupme');
+    const result = await client.query('SELECT * FROM nwhs_groupme');
     res.render('pages/db', result);
     client.release();
   } catch (err) {
@@ -53,4 +52,3 @@ app.get('/db', async (req, res) => {
     res.send("Error " + err);
   }
 });
-

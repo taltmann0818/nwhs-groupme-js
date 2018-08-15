@@ -1,5 +1,22 @@
 // local variables
 var HTTPS = require('https');
+const { Client } = require('pg');
+
+const client = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+});
+
+client.connect();
+
+client.query('SELECT public,nwhs_groupme FROM information_schema.tables;', (err, res) => {
+  if (err) throw err;
+  for (let row of res.rows) {
+    console.log(JSON.stringify(row));
+  }
+  client.end();
+});
+
 
 // global variables
 var botID = process.env.BOT_ID;
@@ -15,7 +32,6 @@ function respond() {
     this.res.end();
   } else {
     console.log(request.name.toString() + ": " + request.text.toString());
-    exports.localReq = "THIS IS A TEST";
     this.res.writeHead(200);
     this.res.end();
   }
