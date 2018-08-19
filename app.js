@@ -33,6 +33,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
+//Groupme bot POST service
+app.post('/', function(req, res){
+    req.send(bot.respond)
+});
+
 app.get('/', function(req, res){
     //PG connect
     client.query('SELECT * FROM nwhs_groupme', function(err, result){
@@ -41,11 +46,6 @@ app.get('/', function(req, res){
         }
         res.render('index', {nwhs_groupme: result.rows});
     });
-});
-
-//Groupme bot POST service
-app.post('/', function(req, res){
-    res.send(bot.respond)
 });
 
 // Server
