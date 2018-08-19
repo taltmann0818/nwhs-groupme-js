@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 //Groupme bot POST service
 app.post('/', function(req, res){
-    req.send(bot.respond)
+    req.push(bot.respond);
 });
 
 app.get('/', function(req, res){
