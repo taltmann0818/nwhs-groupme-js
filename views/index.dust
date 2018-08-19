@@ -1,0 +1,9 @@
+{>"layout" /}
+
+{<body}
+    {#nwhs_groupme}
+        <div class="well">
+            <h4>{name} <button class="btn btn-default pull-right" data-toggle="collapse" href="#nwhs_groupme_{id}" aria-expanded="false" aria-controls="nwhs_groupme_{id}">View</button></h4>
+        </div>
+    {/nwhs_groupme}
+{/body}
