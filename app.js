@@ -10,7 +10,7 @@ var express = require('express'),
 const {Client} = require('pg');
 
 // DB connecion string
-var conString = 'postgres://msyywltsommhgb:a3f503ad7a1179aa1a6c2ad0f781bafc80821b9722189128f15960eb2d5bf6de@ec2-23-23-216-40.compute-1.amazonaws.com:5432/de8bd2k0oj2g58'
+var conString = process.env.DATABASE_URL;
 
 //Connect to pg client
 const client = new Client({
