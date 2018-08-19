@@ -49,6 +49,7 @@ app.post('/', function(req, res){
 });
 
 // Server
-app.listen(3000, function(){
-    console.log('Server Started On Port 3000');
+port = Number(process.env.PORT || 5000);
+app.listen(port, function(){
+    console.log('Server Started On Port 5000');
 });
