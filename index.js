@@ -28,7 +28,7 @@ server.listen(port);
 
 function ping() {
   this.res.writeHead(200);
-  this.res.write("This is the front-end webwage for the webserver that handles the bots and database.");
+  this.res.write("This is the back-end webwage for the webserver that handles the bots and database.");
   this.res.end();
   
 }
