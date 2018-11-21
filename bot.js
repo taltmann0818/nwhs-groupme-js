@@ -23,7 +23,7 @@ function respond() {
     postMessage();
     this.res.end();
   } else {
-    client.query('INSERT INTO nwhs_groupme(name, message, id) VALUES($1, $2, $3)', [request.name.toString(), request.text.toString()]);
+    client.query('INSERT INTO nwhs_groupme(name, message) VALUES($1, $2)', [request.name.toString(), request.text.toString()]);
     console.log(request.name.toString() + ": " + request.text.toString());
     this.res.writeHead(200);
     this.res.end();
